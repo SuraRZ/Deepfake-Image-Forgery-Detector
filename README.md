@@ -51,12 +51,7 @@ static/
     uploads/   (created automatically)
 requirements.txt
 
-## Recommended next stage for a university project
 
-Treat this version as the baseline system. Then add:
-1. a labeled image dataset
-2. a machine-learning/deep-learning classifier
-3. train/validation/test evaluation
 4. accuracy, precision, recall, F1 and confusion matrix
 5. comparison between the ML model and the ELA+metadata baseline
 6. optional Grad-CAM/saliency visualization
