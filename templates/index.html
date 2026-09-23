@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Forgery Detector</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Image Forgery Detector</h1>
+      <p class="subtitle">Error Level Analysis + metadata forensics — upload an image to check for signs of editing.</p>
+    </header>
+
+    <div id="dropzone" class="dropzone">
+      <p>Drag & drop a JPG/PNG here, or click to choose a file</p>
+      <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden>
+    </div>
+
+    <div id="loading" class="loading hidden">Analyzing…</div>
+    <div id="error" class="error hidden"></div>
+
+    <div id="results" class="results hidden">
+      <div class="images">
+        <div class="image-card">
+          <h3>Original (suspicious region highlighted)</h3>
+          <img id="annotatedImg" src="">
+        </div>
+        <div class="image-card">
+          <h3>Error Level Analysis map</h3>
+          <img id="elaImg" src="">
+        </div>
+      </div>
+
+      <div class="verdict-card">
+        <h2 id="verdictText"></h2>
+        <ul id="reasonsList"></ul>
+      </div>
+
+      <div class="metadata-card">
+        <h3>EXIF metadata</h3>
+        <table id="metadataTable"><tbody></tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
